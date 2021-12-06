@@ -1,0 +1,28 @@
+{
+  "name": "alfred-ntd-exchange",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "icons": "node --experimental-json-modules ./libs/genicons.js",
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "author": "visioncan",
+  "license": "MIT",
+  "dependencies": {
+    "alfy": "^0.12.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "jsxBracketSameLine": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
+  },
+  "devDependencies": {
+    "fontkit": "^1.8.1",
+    "unicode-emoji-json": "^0.3.0"
+  }
+}
