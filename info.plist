@@ -44,7 +44,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Loading...</string>
 				<key>script</key>
 				<string>./node_modules/.bin/run-node index.js "$1"</string>
 				<key>scriptargtype</key>
@@ -54,7 +54,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string></string>
+				<string>查詢台灣銀行新台幣兌各國匯率</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -81,6 +81,6 @@
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/visioncan/alfred-ntd-exchange</string>
 </dict>
 </plist>

@@ -91,7 +91,29 @@ export const csv2Obj = body => {
       const row = item.split(',')
       return [...row.map((item, idx) => [headers[idx], item])]
     })
+
   return table
 }
 
-// module.exports = { avaiableCurrency, csv2Obj }
+const getUpdateTimeFromHeaders = headers => {
+  const csvfilename = headers['content-disposition']
+  if (!csvfilename) return undefined
+  const [, date] = csvfilename.match(/ExchangeRate@(\d+)/) || []
+  return date
+}
+
+export const getUpdateTime = headers => {
+  let date = getUpdateTimeFromHeaders(headers)
+  if (!date) {
+    return ''
+  }
+  const pattern = /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/
+  return date.replace(pattern, '$1/$2/$3 $4:$5')
+}
+
+export const numFormater = new Intl.NumberFormat('zh-Hant', {
+  style: 'decimal',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 3
+})
+
