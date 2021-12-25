@@ -10,7 +10,7 @@
 npm i -g alfred-ntd-exchange
 ```
 
-*Requires the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
+*Requires [Node.js 9+](https://nodejs.org/) and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
 
 ## Usage
 
