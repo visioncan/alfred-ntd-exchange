@@ -1,10 +1,10 @@
-import fs from 'fs'
-import { URL } from 'url'
-import fontkit from 'fontkit'
-import flagEmoji from 'unicode-emoji-json/data-by-group.json'
-import { avaiableCurrency } from '../utils.js'
+const fs = require('fs')
+const path = require('path')
+const fontkit = require('fontkit')
+const flagEmoji = require('unicode-emoji-json/data-by-group.json')
+const { avaiableCurrency } = require('../src/utils')
 
-const outputFolder = new URL('../flags/', import.meta.url).pathname
+const outputFolder = path.resolve(__dirname, `../flags`)
 const font = fontkit.openSync('/System/Library/Fonts/Apple Color Emoji.ttc').fonts[0]
 
 const currencyflag = Object.values(avaiableCurrency).map(
@@ -18,7 +18,7 @@ const flagEmojis = flagEmoji.Flags.filter(
 const saveIcon = ({ emoji, slug }) => {
   const emojiGlyph = font.layout(emoji)
   const glyph = emojiGlyph.glyphs[0].getImageForSize(128)
-  fs.writeFileSync(`${outputFolder}${slug}.png`, glyph.data)
+  fs.writeFileSync(`${outputFolder}/${slug}.png`, glyph.data)
 }
 
 flagEmojis.forEach(flag => {
