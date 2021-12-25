@@ -4,6 +4,7 @@
   "description": "Alfred workflow for fetch NTD Foreign Exchange Rate from BOT(Bank Of Taiwan)",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "icons": "node ./libs/genicons.js",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "fontkit": "^1.8.1",
+    "jest": "^27.4.5",
     "unicode-emoji-json": "^0.3.0"
   }
 }
